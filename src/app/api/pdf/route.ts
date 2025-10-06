@@ -1,7 +1,7 @@
 import {OpenAIEmbeddings} from "@langchain/openai";
 import {HumanMessage, SystemMessage} from "@langchain/core/messages";
 import {PDFLoader} from "@langchain/community/document_loaders/fs/pdf";
-import {QdrantVectorStore} from "@langchain/qdrant";
+import {QdrantLibArgs, QdrantVectorStore} from "@langchain/qdrant";
 import {streamAI} from "@/utils";
 
 export async function POST(request: Request) {
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
         model: "text-embedding-3-small",
     });
 
-    const qdrantConfig: any = {
+    const qdrantConfig: QdrantLibArgs = {
         url: process.env.QDRANT_URL || "http://localhost:6333",
         collectionName: "pdf-documents",
     };
