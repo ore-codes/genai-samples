@@ -29,7 +29,6 @@ export default function Voice() {
 
     useEffect(() => {
         getGeneratedVoices();
-        console.log(arrayOfVoices);
     }, []);
 
     async function generateSpeech() {
@@ -73,7 +72,7 @@ export default function Voice() {
                                 {arrayOfVoices.map((e: VoiceObject) => (
                                     <button
                                         className={`border ${
-                                            theVoiceId === e.voice_id ? "bg-green-700" : ""
+                                            theVoiceId === e.voice_id ? "bg-gray-700 text-white" : ""
                                         }   px-2 my-2 rounded-sm  py-1`}
                                         onClick={() => setTheVoiceId(e.voice_id)}
                                         key={e.voice_id}
@@ -88,7 +87,7 @@ export default function Voice() {
                     </div>
                 </div>
                 <textarea
-                    className=" p-1 w-[40rem] text-black rounded-sm  border-gray-600"
+                    className=" p-1 w-[40rem] text-black rounded-sm  border border-gray-600"
                     onChange={(event) => {
                         setTheText(event.target.value);
                     }}
@@ -101,7 +100,7 @@ export default function Voice() {
                     {isLoading ? "Loading..." : "Go"}
                 </button>
             </div>
-            <div className="w-80 h-80 mt-12 relative placeholderdiv">
+            <div className="w-80 h-20 mt-12 relative placeholderdiv">
                 {theAudio && (
                     <audio controls src={theAudio}>
                         Your browser does not support the audio tag
