@@ -20,6 +20,18 @@ First, install dependencies:
 npm install
 ```
 
+Create a `.env` file from the example and configure your API keys:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and add your API keys:
+- `OPENAI_API_KEY` - Get from [OpenAI](https://platform.openai.com/api-keys)
+- `HF_APIKEY` - Get from [Hugging Face](https://huggingface.co/settings/tokens)
+- `XI_API_KEY` - Get from [ElevenLabs](https://elevenlabs.io/app/settings/api-keys)
+- `QDRANT_URL` - Optional, defaults to `http://localhost:6333`
+
 Then, run the development server:
 
 ```bash
