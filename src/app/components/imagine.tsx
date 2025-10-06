@@ -33,7 +33,7 @@ export default function Imagine() {
     };
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl cursor-pointer">Imagine:</summary>
             <div className="mb-4">
                 Uses Stable Diffusion to generate images from text prompts

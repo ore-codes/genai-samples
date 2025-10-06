@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto p-4 space-y-4">
-        <h1>Generative AI samples</h1>
+        <h1 className="text-center font-semibold text-4xl my-12">Generative AI samples</h1>
         <Translate/>
         <Transcribe />
         <Voice/>

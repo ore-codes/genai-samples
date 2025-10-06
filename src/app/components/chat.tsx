@@ -30,7 +30,7 @@ export default function Chat() {
     }, [prompt]);
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl">Storyline:</summary>
             <div className="flex flex-col gap-4 items-start mt-6">
                 <input value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Describe what the story should be about" className="border rounded px-4 py-2 text-lg"/>

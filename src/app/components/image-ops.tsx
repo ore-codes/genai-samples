@@ -64,7 +64,7 @@ export default function ImageOps() {
     }
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl cursor-pointer">Image ops:</summary>
             <input
                 type="file"

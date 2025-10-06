@@ -43,7 +43,7 @@ export default function Transcribe() {
     };
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl cursor-pointer">Transcribe:</summary>
             <div className="flex flex-col items-center rounded-xl">
                 <div className=" h-full flex flex-col gap-2 overflow-y-auto py-8 px-3 w-full">

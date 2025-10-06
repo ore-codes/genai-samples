@@ -86,7 +86,7 @@ export default function PdfReader() {
     }, [question, file]);
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl cursor-pointer">Read PDF:</summary>
             <div className="flex flex-col gap-4 mt-6">
                 <div>

@@ -58,7 +58,7 @@ export default function Voice() {
     }
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl cursor-pointer">Voice:</summary>
             <div className="mb-4">
                 Uses the ElevenLabs API to convert your text into a

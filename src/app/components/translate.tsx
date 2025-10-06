@@ -20,7 +20,7 @@ export default function Translate() {
     }, [text]);
 
     return (
-        <details className="shadow p-4 rounded border border-gray-300">
+        <details className="p-4 rounded border border-gray-300">
             <summary className="font-semibold text-xl">Translate:</summary>
             <div className="flex flex-col gap-4 items-start mt-6">
                 <input value={text} onChange={(e) => setText(e.target.value)} className="border rounded px-4 py-2 text-lg"/>
