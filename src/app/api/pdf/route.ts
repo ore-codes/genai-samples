@@ -22,10 +22,17 @@ export async function POST(request: Request) {
     const embeddings = new OpenAIEmbeddings({
         model: "text-embedding-3-small",
     });
-    const vectorStore = await QdrantVectorStore.fromExistingCollection(embeddings, {
+
+    const qdrantConfig: any = {
         url: process.env.QDRANT_URL || "http://localhost:6333",
         collectionName: "pdf-documents",
-    });
+    };
+
+    if (process.env.QDRANT_API_KEY) {
+        qdrantConfig.apiKey = process.env.QDRANT_API_KEY;
+    }
+
+    const vectorStore = await QdrantVectorStore.fromExistingCollection(embeddings, qdrantConfig);
 
     await vectorStore.addDocuments(docs);
 

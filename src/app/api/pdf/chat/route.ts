@@ -1,5 +1,5 @@
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
-import { QdrantVectorStore } from "@langchain/qdrant";
+import {QdrantLibArgs, QdrantVectorStore} from "@langchain/qdrant";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import {streamAI} from "@/utils";
 
@@ -17,10 +17,16 @@ export async function POST(request: Request) {
         let relevantDocs;
 
         try {
-            const vectorStore = await QdrantVectorStore.fromExistingCollection(embeddings, {
+            const qdrantConfig: QdrantLibArgs = {
                 url: process.env.QDRANT_URL || "http://localhost:6333",
                 collectionName: "pdf-documents",
-            });
+            };
+
+            if (process.env.QDRANT_API_KEY) {
+                qdrantConfig.apiKey = process.env.QDRANT_API_KEY;
+            }
+
+            const vectorStore = await QdrantVectorStore.fromExistingCollection(embeddings, qdrantConfig);
 
             relevantDocs = await vectorStore.similaritySearch(question, 4);
         } catch (qdrantError) {
